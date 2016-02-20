@@ -24,6 +24,11 @@ func (i *Int64) Incr() {
 	atomic.AddInt64(i.n, 1)
 }
 
+// IncrN incremenets the accumulator by the provided value n
+func (i *Int64) IncrN(n int64) {
+	atomic.AddInt64(i.n, n)
+}
+
 // Flush resets the accumulator to 0, and returns the former value
 func (i *Int64) Flush() int64 {
 	return atomic.SwapInt64(i.n, 0)
@@ -44,6 +49,13 @@ func NewFloat64() *Float64 {
 func (i *Float64) Incr() {
 	i.l.Lock()
 	i.n++
+	i.l.Unlock()
+}
+
+// IncrN incremenets the accumulator by 1
+func (i *Float64) IncrN(n float64) {
+	i.l.Lock()
+	i.n += n
 	i.l.Unlock()
 }
 

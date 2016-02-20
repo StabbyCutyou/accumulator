@@ -1,5 +1,4 @@
-Accumulator
-=================
+# Accumulator [![GoDoc](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](http://godoc.org/github.com/StabbyCutyou/accumulator)
 
 Accumulator is a collection of threadsafe counters that you can increment, and collect
 periodic results from.
@@ -10,8 +9,7 @@ to collect statistics with, that were quick, threadsafe, and easy to re-use and 
 Accumulator provides a simple struct that lets you increment a counter, and flush it
 to zero, returning the current value.
 
-Using it
-================
+# Using it
 
 Download the library
 
