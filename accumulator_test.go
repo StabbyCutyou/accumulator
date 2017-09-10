@@ -70,6 +70,9 @@ func BenchmarkAtomicWithConcurrentFlush(b *testing.B) {
 	}()
 	for i := 0; i < b.N; i++ {
 		c.Incr()
+		if i%10000 == 0 {
+			c.Flush()
+		}
 	}
 }
 

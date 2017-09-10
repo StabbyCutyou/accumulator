@@ -15,8 +15,7 @@ type Int64 struct {
 
 // NewInt64 returns a new pointer to an accumulator
 func NewInt64() *Int64 {
-	i := int64(0)
-	return &Int64{n: &i}
+	return &Int64{n: new(int64)}
 }
 
 // Incr incremenets the accumulator by 1
